@@ -1,11 +1,18 @@
-VARSET myVar 10
-PUSH 5
-ADD
-PRINT
-VARSET myVar 20
-VARGET myVar
-PUSH 3
-SUB
-PRINT
-INPUT
-PRINT
+# Number guessing game
+# The program will set a random number, and the player must guess it.
+
+VARSET target 7        # Target number (hardcoded for this example)
+VARSET attempts 0      # Counter for the number of attempts
+
+PRINT                  # Prompt to enter the first guess
+INPUT                  # Player inputs a guess
+VARSET guess 0         # Store the input in a variable
+
+VARSET win 0           # Flag for winning the game
+
+# Loop start
+VARGET guess           # Push the guess
+VARGET target          # Push the target number
+SUB                    # Subtract the target from the guess
+PUSH 0                 # Push zero to compare
+PRINT                  # Print Results
