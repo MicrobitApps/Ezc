@@ -1,18 +1,24 @@
-# Number guessing game
-# The program will set a random number, and the player must guess it.
+# Guess the number game
+target = 7         # The number to guess
+attempts = 0       # Track attempts
 
-VARSET target 7        # Target number (hardcoded for this example)
-VARSET attempts 0      # Counter for the number of attempts
+print("Guess the number between 1 and 10!")
 
-PRINT                  # Prompt to enter the first guess
-INPUT                  # Player inputs a guess
-VARSET guess 0         # Store the input in a variable
+while true do
+    print("Enter your guess:")
+    input             # User enters guess
+    guess = input     # Store input in variable
 
-VARSET win 0           # Flag for winning the game
+    attempts = attempts + 1
 
-# Loop start
-VARGET guess           # Push the guess
-VARGET target          # Push the target number
-SUB                    # Subtract the target from the guess
-PUSH 0                 # Push zero to compare
-PRINT                  # Print Results
+    if guess == target then
+        print("Congratulations! You guessed it!")
+        print("It took you:")
+        print(attempts)
+        break
+    elseif guess < target then
+        print("Too low!")
+    elseif guess > target then
+        print("Too high!")
+    end
+end
