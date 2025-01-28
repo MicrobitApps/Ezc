@@ -1,13 +1,13 @@
-# Guess the number game
-target = 7         # The number to guess
-attempts = 0       # Track attempts
+
+target = 7        
+attempts = 0
 
 print("Guess the number between 1 and 10!")
 
 while true do
     print("Enter your guess:")
-    input             # User enters guess
-    guess = input     # Store input in variable
+    input             
+    guess = input     
 
     attempts = attempts + 1
 
